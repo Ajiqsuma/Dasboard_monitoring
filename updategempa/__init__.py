@@ -28,17 +28,44 @@ def ekstrasi_data():
 
     if content.status_code == 200:
         soup = BeautifulSoup(content.text,'html.parser')
-        title= soup.find('title')
-        print(title.string)
+        result = soup.find('span', {'class':'waktu'})
+        result = result.text.split(', ')
+        tanggal = result[0]
+        waktu = result[1]
+        result = soup.find('div', {'class': 'col-md-6 col-xs-6 gempabumi-detail no-padding'})
+        result = result.findChildren('li')
+
+        i = 0
+        magnitudo = None
+        kedalaman = None
+        ls = None
+        bt = None
+        pusat =None
+        dirasakan =None
+        for res in result:
+            # print(i, res)
+            if i == 1:
+                magnitudo = res.text
+            elif i == 2:
+                kedalaman = res.text
+            elif i == 3:
+                koordinat = res.text.split(' - ')
+                ls = koordinat[0]
+                bt = koordinat[1]
+            elif i == 4:
+                lokasi = res.text
+            elif i == 5:
+                dirasakan = res.text
+            i = i + 1
 
         hasil= dict()
-        hasil['tanggal']= '01 Maret 2024'
-        hasil['waktu']= '20:59:36 WIB'
-        hasil['magnitudo']= '3,2'
-        hasil['kedalaman']= '5 km'
-        hasil['lokasi']= {'ls':2.88,'bt':119.48}
-        hasil['pusat'] ='Pusat gempa berada di darat 17 km TimurLaut Mamasa'
-        hasil['dirasakan']='Dirasakan (Skala MMI): III Mamasa'
+        hasil['tanggal']= tanggal   #'01 Maret 2024'
+        hasil['waktu']= waktu #'20:59:36 WIB'
+        hasil['magnitudo']= magnitudo #'3,2'
+        hasil['kedalaman']= kedalaman #'5 km'
+        hasil['koordinat']= {'ls':ls, 'bt':bt}
+        hasil['lokasi'] = lokasi #Pusat gempa berada di darat 17 km TimurLaut Mamasa
+        hasil['dirasakan']= dirasakan #'Dirasakan (Skala MMI): III Mamasa'
         return hasil
     else:
         return None
@@ -53,7 +80,7 @@ def tampil_data(result):
     print(f"Waktu {result['waktu']}")
     print(f"Magnitudo {result['magnitudo']}")
     print(f"Kedalaman {result['kedalaman']}")
-    print(f"Lokasi : {result['lokasi']['ls']} LS, {result['lokasi']['bt']} BT")
-    print(f"Pusat {result['pusat']}")
+    print(f"Koordinat : {result['koordinat']['ls']}, {result['koordinat']['bt']}")
+    print(f"Lokasi {result['lokasi']}")
     print(f"Dirasakan {result['dirasakan']}")
 
