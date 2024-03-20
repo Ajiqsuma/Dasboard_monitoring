@@ -1,5 +1,4 @@
 import requests
-# from bs4 import BeautifulSoup
 from bs4 import BeautifulSoup
 
 
@@ -40,7 +39,7 @@ def ekstrasi_data():
         kedalaman = None
         ls = None
         bt = None
-        pusat =None
+        lokasi =None
         dirasakan =None
         for res in result:
             # print(i, res)
@@ -82,5 +81,5 @@ def tampil_data(result):
     print(f"Kedalaman {result['kedalaman']}")
     print(f"Koordinat : {result['koordinat']['ls']}, {result['koordinat']['bt']}")
     print(f"Lokasi {result['lokasi']}")
-    print(f"Dirasakan {result['dirasakan']}")
+    print(f"Getaran {result['dirasakan']}")
 
