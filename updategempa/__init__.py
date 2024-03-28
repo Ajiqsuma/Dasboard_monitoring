@@ -58,13 +58,13 @@ def ekstrasi_data():
             i = i + 1
 
         hasil= dict()
-        hasil['tanggal']= tanggal   #'01 Maret 2024'
-        hasil['waktu']= waktu #'20:59:36 WIB'
-        hasil['magnitudo']= magnitudo #'3,2'
-        hasil['kedalaman']= kedalaman #'5 km'
+        hasil['tanggal']= tanggal
+        hasil['waktu']= waktu
+        hasil['magnitudo']= magnitudo
+        hasil['kedalaman']= kedalaman
         hasil['koordinat']= {'ls':ls, 'bt':bt}
-        hasil['lokasi'] = lokasi #Pusat gempa berada di darat 17 km TimurLaut Mamasa
-        hasil['dirasakan']= dirasakan #'Dirasakan (Skala MMI): III Mamasa'
+        hasil['lokasi'] = lokasi
+        hasil['dirasakan']= dirasakan
         return hasil
     else:
         return None
