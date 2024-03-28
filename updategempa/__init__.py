@@ -75,11 +75,11 @@ def tampil_data(result):
         return
 
     print('Tampilkan gempa terkini dari bmkg')
-    print(f"Tanggal {result['tanggal']}")
-    print(f"Waktu {result['waktu']}")
-    print(f"Magnitudo {result['magnitudo']}")
-    print(f"Kedalaman {result['kedalaman']}")
+    print(f"Tanggal   : {result['tanggal']}")
+    print(f"Waktu     : {result['waktu']}")
+    print(f"Magnitudo : {result['magnitudo']}")
+    print(f"Kedalaman : {result['kedalaman']}")
     print(f"Koordinat : {result['koordinat']['ls']}, {result['koordinat']['bt']}")
-    print(f"Lokasi {result['lokasi']}")
-    print(f"Getaran {result['dirasakan']}")
+    print(f"Lokasi    : {result['lokasi']}")
+    print(f"Getaran   : {result['dirasakan']}")
 
