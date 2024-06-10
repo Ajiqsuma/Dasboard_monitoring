@@ -25,7 +25,8 @@ def ekstrak_data():
         print(judul.text)
 
         result = soup.find('div', {'class': 'box cb-mostpop'})
-        tag= result.find_all('div',{'class':'list-content'})
+        # tag= result.find_all('div',{'class':'list-content'})
+        tag= result.text
 
         print(tag)
 
