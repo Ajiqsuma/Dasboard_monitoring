@@ -22,7 +22,7 @@ def ekstrak_data():
         soup = BeautifulSoup(content.text, 'html.parser')
         result = soup.find('div', {'class': 'box cb-mostpop'})
         judul= result.find('h2')
-        print(judul.text)
+        print(judul)
 
         result = soup.find('div', {'class': 'box cb-mostpop'})
         # tag= result.find_all('div',{'class':'list-content'})
@@ -52,5 +52,5 @@ def tampilkan_data(result):
     print(f"#4 {result['empat']}")
     print(f"#5 {result['lima']}")
 
-# if __name__='__main__':
-#     print('hai')
+ # if __name__='__main__':
+ #    print('hai')

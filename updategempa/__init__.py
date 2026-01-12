@@ -28,12 +28,12 @@ def ekstrasi_data():
     if content.status_code == 200:
         soup = BeautifulSoup(content.text,'html.parser')
         result = soup.find('span', {'class':'waktu'})
-        result = result.text.split(', ')
-        tanggal = result[0]
-        waktu = result[1]
-        result = soup.find('div', {'class': 'col-md-6 col-xs-6 gempabumi-detail no-padding'})
-        result = result.findChildren('li')
-
+        # result = result.text.split(', ')
+        # tanggal = result[0]
+        # waktu = result[1]
+        # result = soup.find('div', {'class': 'col-md-6 col-xs-6 gempabumi-detail no-padding'})
+        # result = result.findChildren('li')
+        print()
         i = 0
         magnitudo = None
         kedalaman = None
