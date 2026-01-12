@@ -31,9 +31,9 @@ def ekstrasi_data():
         # result = result.text.split(', ')
         # tanggal = result[0]
         # waktu = result[1]
-        # result = soup.find('div', {'class': 'col-md-6 col-xs-6 gempabumi-detail no-padding'})
+        result = soup.find('div', {'class': 'col-md-6 col-xs-6 gempabumi-detail no-padding'})
         # result = result.findChildren('li')
-        print()
+        print (result)
         i = 0
         magnitudo = None
         kedalaman = None
